@@ -4,17 +4,17 @@
 typedef struct node
 {
     int data;
-    struct node * next;
+    struct node* next;
 } node;
 
-node * createLinkedList(int n);
+node* createLinkedList(int n);
 
-void displayList(node * head);
+void displayList(node* head);
 
 int manin(void)
 {
-    int n;
-    node * HEAD = NULL;
+    int n = 0;
+    node* HEAD = NULL;
     printf("How many nodes?");
     scanf("%i", &n);
     HEAD = createLinkedList(n);
@@ -22,11 +22,11 @@ int manin(void)
     return 0;
 }
 
-node * createLinedList(int n)
+node* createLinedList(int n)
 {
-    node * head = NULL;
-    node * temp = NULL;
-    node * iterate = NULL;
+    node* head = NULL;
+    node* temp = NULL;
+    node* iterate = NULL;
 
     for (int i = 0; i < n; i++)
     {
@@ -53,9 +53,9 @@ node * createLinedList(int n)
     return head;
 }
 
-void displayList(node * head)
+void displayList(node* head)
 {
-    node * iterate = head;
+    node* iterate = head;
     while(iterate != NULL)
     {
         printf("\t %i ->", iterate->data);
