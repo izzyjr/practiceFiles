@@ -30,7 +30,7 @@ node* createLinedList(int n)
 
     for (int i = 0; i < n; i++)
     {
-        temp = (node*)malloc(sizeof(node));
+        temp = malloc(sizeof(node));
         printf("Enter the date for node number: %i", i + 1);
         scanf("%i", &(temp->data));
         temp->next = NULL;

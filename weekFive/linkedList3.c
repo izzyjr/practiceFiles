@@ -7,49 +7,47 @@
 
 int main(void)
 {
-    typedef struct node
+    struct node
     {
         int num;
-        struct node* ptr;
-    }
-    node;
+        struct node *ptr;
+    };
+    typedef struct node NODE;
 
-    node* head = NULL;
-    node* first = NULL;
-    node* temp = NULL;
+    NODE *head, *first, *temp = 0;
     int count = 0;
     int choice = 1;
+    first = 0;
 
     while (choice)
     {
-        head = malloc(sizeof(node));
+        head  = (NODE *)malloc(sizeof(NODE));
         printf("Enter the data item\n");
-        scanf("%d", &head->num);
-        if (first != NULL)
+        scanf("%d", &head-> num);
+        if (first != 0)
         {
             temp->ptr = head;
             temp = head;
         }
         else
         {
-            temp = head;
-            first = temp;
+            first = temp = head;
         }
         fflush(stdin);
         printf("Do you want to continue(Type 0 or 1)?\n");
         scanf("%d", &choice);
 
     }
-
+    temp->ptr = 0;
+    /*  reset temp to the beginning */
     temp = first;
-    printf("\nStatus of the linked list is\n");
-    while (temp != NULL)
+    printf("\n status of the linked list is\n");
+    while (temp != 0)
     {
         printf("%d=>", temp->num);
         count++;
-        temp = temp->ptr;
+        temp = temp -> ptr;
     }
     printf("NULL\n");
-    printf("%d=>\n", first->num);
-    printf("# of nodes in the list = %d\n", count);
+    printf("No. of nodes in the list = %d\n", count);
 }
