@@ -13,7 +13,7 @@ int hash_function(char* key, int size)
     {
         if(key[count] != '\0')
         {
-            hash = hash + key[count];
+            hash = hash + toupper(key[count]);
             count++;
         }
         else
